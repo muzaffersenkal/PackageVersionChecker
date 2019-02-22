@@ -1,0 +1,29 @@
+doctype html
+head
+body
+  div
+   h2
+    b Package Name : #{data.repository}
+   h4 Owner : #{data.owner}
+  div
+     table.table.table-striped
+      tr
+        th Name
+        th Your Version
+        th Latest Version
+        th Status
+       
+        
+
+      each n in data.packages
+        tr
+          td= n.name
+          td= n.version
+          td= n.latest_version
+          if n.upToDate
+            td 
+              b Up To Date
+          else
+            td Outdated
+         
+         
